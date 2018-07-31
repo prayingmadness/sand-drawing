@@ -1,0 +1,386 @@
+/*
+	CHANGE ALL IMAGE REFERENCES TO THE BELOW WHEN DELIVERING BUILDS
+	/content/images/sandapp/[image]
+*/
+
+/*body {margin:0; padding:0; height: 655px; overflow: hidden;}*/
+
+#sandcontainer{position:absolute; width: 1024px; height: 655px; opacity: 0; -webkit-transition: all .3s ease !important; top: 0; left: 0;}
+
+/*#sandcontainer * {
+	-webkit-transform: translateZ(0);
+	-webkit-perspective: 1000;
+	-webkit-backface-visibility: hidden;
+}*/
+
+#sandcontainer.shown {opacity:1;}
+
+#sandcontainer canvas {width: 1024px; height: 655px; border: none; position: absolute; left: 0; top: 0;}
+
+#sandcontainer #sand {z-index: 200; background: url(../../Images/sandapp/background2.jpg) left top no-repeat;}
+
+#sandcontainer #edges {z-index: 300; }
+
+#sandcontainer #final {z-index: 50;}
+
+#sandcontainer #sand_close {
+	position: absolute; 
+	left: 980px; 
+	top: 16px;
+	width: 21px;
+	height: 22px;
+	background: transparent url(../../Images/sandapp/img.close.2x.png) left top no-repeat;
+	background-size: 100%;
+	z-index: 375;
+}
+
+#sandcontainer #erase {
+	position: absolute; 
+	left: 835px; 
+	top: 555px;
+	width: 61px;
+	height: 65px;
+	background: transparent url(../../Images/sandapp/img.erase.2x.png) left top no-repeat;
+	background-size: 100%;
+	z-index: 375;
+}
+
+#sandcontainer #erase_confirm {
+	width: 284px; height: 48px;
+	background: transparent url(../../Images/sandapp/wis-bubble.2x.png) left top no-repeat;
+	background-size: 100%;
+	z-index: 420;
+	position: absolute;
+	left: 554px;
+	top: 563px;
+	-webkit-transition: all .3s ease;
+	opacity: 0;
+	pointer-events: none;
+}
+	#sandcontainer #erase_confirm.shown {
+		-webkit-transition: all .3s ease;
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	#sandcontainer #e_yes {
+		width: 66px; height: 31px;
+		position: relative;
+		background: transparent url(../../Images/sandapp/btn.erase-yn.2x.png) left top no-repeat;
+		background-size: 145px 31px;
+		z-index:422;
+		float: left;
+		position: relative;
+		margin-left: 120px;
+		margin-top: 4px;
+	}
+
+	#sandcontainer #e_no {
+		width: 75px; height: 31px;
+		position: relative;
+		background: transparent url(../../Images/sandapp/btn.erase-yn.2x.png) right top no-repeat;
+		background-size: 145px 31px;
+		z-index: 422;
+		float: left;
+		position: relative;
+		margin-left: 4px;
+		margin-top: 4px;
+
+	}
+
+#sandcontainer #nodrawing {
+	-webkit-transition: all .3s ease;
+	opacity: 0;
+	position: absolute; 
+	left: 746px;
+	top: 561px;
+	width: 166px;
+	height: 49px;
+	background: transparent url(../../Images/sandapp/img.nodrawing.2x.png) left top no-repeat;
+	background-size: 100%;
+	z-index: 500;
+	pointer-events: none;
+}
+	
+	#sandcontainer #nodrawing.shown {
+		-webkit-transition: all .3s ease;
+		opacity: 1;
+	}
+
+#sandcontainer #upload {
+	position: absolute; 
+	left: 910px; 
+	top: 532px;
+	width: 98px;
+	height: 105px;
+	background: transparent url(../../Images/sandapp/img.upload.2x.png) left top no-repeat;
+	background-size: 100%;
+	z-index: 390;
+}
+
+#sandcontainer #teken {
+	pointer-events: none;
+	z-index: 410;
+	position: absolute;
+	width: 1024px; height: 655px;
+	font: 22px "HelveticaNeue-light", sans-serif;
+	/*line-height: 625px;*/
+	margin-top: 275px;
+	text-shadow: 2px 2px 2px rgba(102,66,19,.45);
+	color: #fff;
+	text-align: center;
+	-webkit-transition: all .1s ease;
+	opacity: 1;
+}
+	#sandcontainer #teken em {
+		font-size: 16px;
+	}
+	#sandcontainer #teken.gone {
+		opacity:0;
+	}
+
+#sandcontainer #sandform {
+	pointer-events: none; 
+	position: absolute; 
+	width: 550px; height: 349px; 
+	left: 256px; 
+	top: 140px; 
+	z-index: 500; 
+	opacity:0; 
+	-webkit-transition: all .3s ease; 
+	padding: 10px; 
+	background: transparent url(../../Images/sandapp/form_bg.png) left top no-repeat;
+	overflow: hidden;
+}
+	
+	#sandcontainer #sandform .close {
+		margin-right: 41px;
+		margin-top: 8px;
+	}
+
+	#sandcontainer #sandform .formcontent {
+		margin-left: 220px;
+		width: 300px;
+		padding: 0;
+		height: 280px;
+	}
+
+	#sandcontainer #sandform .formcontent h2 {
+		padding: 0; margin: 20px 0 10px; 
+		font: 19px/21px normal normal normal "HelveticaNeue-Light", sans-serif;
+		width: 220px;
+	}
+
+	#sandcontainer #sandform .formcontent input:not([type="checkbox"]) {
+		width: 254px;
+		height: 19px;
+		border: none;
+		background-color: #e1e1e1;
+		color: #636363;
+		font: 14px/19px normal normal normal "HelveticaNeue-Bold";
+		margin-bottom: 4px;
+		display: block;
+		border: 3px #e1e1e1 solid;
+		-webkit-appearance: none;
+	}
+
+		#sandcontainer #sandform .formcontent #email {
+			margin-bottom: 10px;
+		}
+
+	#sandcontainer #sandform .formcontent p {
+		font: 10px/25px normal normal normal "HelveticaNeue";
+		color: #636363;
+		height: 25px;
+		float: left;
+		margin: 0 5px 8px;
+	}
+
+	#sandcontainer #sandform .formcontent input[type="checkbox"] {
+		background-color: black;
+		height: 25px; width: 25px;
+		border-radius: 25px;
+		border: none;
+		-webkit-appearance: none;
+		float: left;
+		clear: left;
+		margin: 0 0 8px;
+		border: 3px black solid;
+	}
+
+	#sandcontainer #sandform .sandbedankt {
+		display: none;
+		float: right;
+	}
+
+	#sandcontainer #sandform .sandbedankt h2 {
+		padding: 0;
+		margin: 95px 0 40px 130px;
+		font: 19px/20px normal normal normal "HelveticaNeue-Light", sans-serif;
+		width: 260px;
+	}
+		#sandcontainer #sandform .sandbedankt h2 strong {
+			font: 19px/20px normal normal normal "HelveticaNeue-Bold", sans-serif;
+		}
+
+	#sandcontainer #sandform .sandbedankt div {
+		background: transparent url(../../Images/sandapp/btn.bedankt.2x.png) left top no-repeat;
+		height: 40px;
+		float: left;
+	}
+
+		#sandcontainer #sandform .sandbedankt #tobeach {
+			width: 197px;
+			background-size: 382px 40px;
+		}
+
+		#sandcontainer #sandform .sandbedankt #sharedrawing {
+			background-position: right top;
+			width: 174px;
+			background-size: 382px 40px;
+			margin-left: 10px;
+		}
+
+			#sandcontainer #sandform .sandbedankt #sharedrawing a {
+				display: block;
+				width: 100%;
+				height: 100%;
+			}
+
+
+	#sandcontainer #sandform .formcontent input[type="checkbox"].error, #sandcontainer #sandform .formcontent input:not([type="checkbox"]).error {
+		border: 3px red solid;
+	}
+	
+	#sandcontainer #sandform .formcontent input[type="checkbox"]:checked {
+		background: #000 url(../../Images/sandapp/img.check.2x.png) center center no-repeat;
+		background-size: 100%;
+	}
+
+	#sandcontainer #sandform .formcontent input[type="image"] {
+		background: #000 url(../../Images/sandapp/btn.versturen.2x.jpg) left top no-repeat;
+		background-size: 100%;
+		width: 130px; height: 38px;
+		float: right;
+		margin-right: 27px;
+		border: 0;
+	}
+
+	#sandcontainer #sandform .formcontent .loading {
+		position: absolute;
+		top: 272px;
+		left: 340px;
+		opacity: 0;
+		-webkit-transition: all .3s ease !important;
+	}
+
+#sandcontainer .shown {
+	pointer-events: auto !important; 
+	display: block !important; 
+	opacity:1 !important; 
+	-webkit-transition: all .3s ease !important;
+}
+
+#sandcontainer #overlay {
+	opacity: 0;
+	pointer-events: none;
+	z-index: 400;
+	position: absolute;
+	width: 1024px; height: 655px;
+	-webkit-transition: all .3s ease;
+	-webkit-box-shadow: inset 0 0 85px rgba(0,0,0,.6);
+	top: 0; left: 0;
+	background-color: rgba(83,42,6,.4);
+}
+
+#sandcontainer .popup {
+	width: 535px; height: 312px;
+	background: transparent url(../../Images/sandapp/popup-bg.png) left top no-repeat;
+	margin-left: auto; margin-right: auto;
+	position: absolute;
+	top: 160px;
+	left: 50%; margin-left: -267px;
+	z-index: 450;
+	-webkit-transition: all .3s ease;
+	opacity: 0;
+	pointer-events: none;
+}
+
+	#sandcontainer .popup .popcontainer {
+		width: 415px; height: 212px;
+		margin: 50px 0 0 60px;
+		padding-right: 30px;
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+		font: .8em normal normal normal "HelveticaNeue", sans-serif;
+	}
+
+	#sandcontainer .popup h2 {
+		margin-top: 0;
+		font-weight: normal;
+		font-family: "HelveticaNeue-Light";
+		font-size: 2em;
+	}
+
+	#sandcontainer .popup ol {
+		margin: 0; padding: 0;
+		list-style-position: inside;
+	}
+
+	#sandcontainer .popup li {
+		padding: 10px 0;
+		margin: 0;
+	}
+
+	#sandcontainer .popup li ul {
+		margin-top: 10px;
+	}
+
+	#sandcontainer .popup li ul li {
+		padding: 0;
+	}
+
+#sandcontainer nav {
+	position: absolute;
+	z-index: 350;
+	left: 25px; top: 620px;
+	pointer-events: auto;
+}
+
+#sandcontainer nav ul {
+	list-style-type: none;
+	margin: 0; padding: 0;
+}
+
+#sandcontainer nav ul li, #sandcontainer nav ul li a {
+	float: left;
+	color: #fff;
+	text-shadow: 2px 2px 2px rgba(102,66,19,.45);
+	margin-right: 30px;
+	font: 11px normal normal normal "HelveticaNeue-Bold";
+	cursor: pointer;
+	text-decoration: none;
+	font-family: sans-serif;
+}
+
+#sandcontainer nav .fb_shareapp a {
+	background: transparent url(../../Images/sandapp/f.png) 6px 2px no-repeat;
+	padding-left: 20px;
+}
+
+#sandcontainer .close {
+	float: right;
+	position: relative;
+	width: 20px; height: 20px;
+	background-color: black;
+	color: white;
+	font: 24px/14px normal normal normal "HelveticaNeue-Bold";
+	/*box-shadow: 0 3px 15px #444;*/
+	border-radius: 20px;
+	margin-right: 25px; margin-top: 25px;
+	text-align: center; text-decoration: none;
+	-webkit-transform: rotate(45deg);
+	z-index: 12500;
+}
+
+#sandcontainer #finalimage, #sandcontainer .preload {display: none; position: absolute;}

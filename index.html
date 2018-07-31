@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="content/Css/sandapp/fingertip.css?asdfsadfsdafsadf" />
+        <title>Sand Drawing</title>
+    </head>
+    <body>
+        <!-- <button id="sandtrigger">Trigger sand drawing</button> -->
+
+        <script src="Scripts/jquery.min.js"></script>
+        <script src="Scripts/fingertip.js?v010f1"></script>
+        <script src="Scripts/jquery.validate.js"></script>
+        <!-- <script src="//connect.facebook.net/en_US/all.js"></script> -->
+        <script>
+            var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+            $("#sandtrigger").on('click',function(e) {
+                // $(this).hide(); //remove the button
+                SAND.Global.init(); //instantiate the app
+            });
+            SAND.Global.init(); //instantiate the app
+            // DEBUG
+            // $(function() {
+            //     SAND.Global.init(); //instantiate the app
+            // });
+        </script>
+
+    </body>
+</html>
