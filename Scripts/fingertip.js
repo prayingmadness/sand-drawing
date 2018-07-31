@@ -338,9 +338,7 @@ SAND.Global = (function (window, document, undefined) {
                 if (drawingExists === false) {
                     $("#nodrawing").addClass("shown");
                 } else {
-                    $(".formcontent").show();
-                    $(".sandbedankt").hide(); //DEBUG: SWAP THESE TWO
-                    $("#overlay, #sandform").addClass("shown");
+                    //boop
                 }
             };
 
